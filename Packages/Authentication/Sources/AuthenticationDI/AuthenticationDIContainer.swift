@@ -40,4 +40,8 @@ public final class AuthenticationDIContainer {
     public func makeLoginUseCase() -> LoginUseCase {
         .init(repository: authenticationRepository)
     }
+    
+    public func makeVerifyOTPUseCase() -> VerifyOTPUseCase {
+        .init(repository: authenticationRepository)
+    }
 }

@@ -4,25 +4,27 @@ private let EXPECTED_LOGIN_RESPONSE = "OK"
 
 public protocol ElmerAPIClientProtocol {
     func login(email: String) async throws
+    func verify(email: String, otp: String) async throws -> ElmerAPIToken
 }
 
 public final class ElmerAPIClient: ElmerAPIClientProtocol {
     private let urlSession: URLSession
-    private let elmerAPIRequestFactory: ElmerAPIRequestFactoryProtocol
+    private let requestFactory: ElmerAPIRequestFactoryProtocol
     
     public init(
         urlSession: URLSession,
-        elmerAPIRequestFactory: ElmerAPIRequestFactoryProtocol = ElmerAPIRequestFactory()
+        requestFactory: ElmerAPIRequestFactoryProtocol = ElmerAPIRequestFactory()
     ) {
         self.urlSession = urlSession
-        self.elmerAPIRequestFactory = elmerAPIRequestFactory
+        self.requestFactory = requestFactory
     }
     
     public func login(email: String) async throws {
+        let request = try requestFactory.makeLoginRequest(
+            email: email
+        )
         let (data, _) = try await urlSession.data(
-            for: elmerAPIRequestFactory.makeLoginRequest(
-                email: email
-            )
+            for: request
         )
         
         guard 
@@ -40,6 +42,22 @@ public final class ElmerAPIClient: ElmerAPIClientProtocol {
                 actualLoginResponse: stringResponse
             )
         }
+    }
+    
+    public func verify(
+        email: String,
+        otp: String
+    ) async throws -> ElmerAPIToken {
+        let request = try requestFactory.makeVerifyOTPRequest(
+            email: email,
+            otp: otp
+        )
+        
+        let (data, _) = try await urlSession.data(
+            for: request
+        )
+        
+        return try JSONDecoder().decode(ElmerAPIToken.self, from: data)
     }
 }
 

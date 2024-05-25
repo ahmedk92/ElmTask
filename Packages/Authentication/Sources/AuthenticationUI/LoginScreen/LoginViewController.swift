@@ -6,7 +6,7 @@ public class LoginViewController: UIHostingController<LoginView> {
     
     public init(
         viewModel: LoginViewModel,
-        onLoginSuccess: @escaping () -> Void
+        onLoginSuccess: @escaping (String) -> Void
     ) {
         self.viewModel = viewModel
         super.init(

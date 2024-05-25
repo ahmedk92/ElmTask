@@ -2,7 +2,8 @@ import AuthenticationDomain
 
 public class AuthenticationRepository: 
     GetAuthenticationStateUseCase.Repository,
-    LoginUseCase.Repository {
+    LoginUseCase.Repository,
+    VerifyOTPUseCase.Repository {
     private let authenticationStateDataSource: AuthenticationStateDataSourceProtocol
     private let elmerAPIClient: ElmerAPIClientProtocol
     
@@ -15,10 +16,15 @@ public class AuthenticationRepository:
     }
     
     public func authenticationState() async throws -> AuthenticationState {
-        try await authenticationStateDataSource.authenticationState()
+        authenticationStateDataSource.authenticationState()
     }
     
     public func login(email: String) async throws {
         try await elmerAPIClient.login(email: email)
+    }
+    
+    public func verify(email: String, otp: String) async throws {
+        let authToken = try await elmerAPIClient.verify(email: email, otp: otp)
+        authenticationStateDataSource.save(authToken: authToken.token)
     }
 }

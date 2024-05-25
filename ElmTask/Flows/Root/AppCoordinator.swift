@@ -4,9 +4,12 @@ import Authentication
 @MainActor
 final class AppCoordinator {
     private let appDIContainer: AppDIContainer = .init()
-    private lazy var viewControllerFactory: 
+    private lazy var viewControllerFactory:
     AppCoordinatorViewControllerFactory = .init(
-        authenticationDIContainer: appDIContainer.makeAuthenticationDIContainer()
+        authenticationDIContainer: appDIContainer.makeAuthenticationDIContainer(),
+        executeAsync: { asyncClosure in
+            Task { try await asyncClosure() }
+        }
     )
     private weak var navigationController: UINavigationController?
     
@@ -23,7 +26,6 @@ final class AppCoordinator {
         let navigationController = UINavigationController(
             rootViewController: rootViewController
         )
-        navigationController.setNavigationBarHidden(true, animated: false)
         self.navigationController = navigationController
         
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -36,7 +38,7 @@ final class AppCoordinator {
     ) {
         switch authenticationState {
         case .loggedIn:
-            print("Should show incidents list screen")
+            showIncidentsListScreen()
         case .loggedOut:
             showLoginScreen()
         }
@@ -44,15 +46,25 @@ final class AppCoordinator {
     
     private func showLoginScreen() {
         let loginViewController = viewControllerFactory.makeLoginViewController(
-            onLoginSuccess: { [weak self] in
-                self?.showVerifyOTPScreen()
+            onLoginSuccess: { [weak self] email in
+                self?.showVerifyOTPScreen(email: email)
             }
         )
         
         navigationController?.setViewControllers([loginViewController], animated: true)
     }
     
-    private func showVerifyOTPScreen() {
-        print("Should show verify OTP screen")
+    private func showVerifyOTPScreen(email: String) {
+        let viewController = viewControllerFactory.makeVerifyOTPViewController(
+            email: email,
+            onVerificationSuccess: { [weak self] in
+                self?.showIncidentsListScreen()
+            }
+        )
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    private func showIncidentsListScreen() {
+        navigationController?.setViewControllers([UIViewController()], animated: true)
     }
 }

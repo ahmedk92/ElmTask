@@ -11,10 +11,13 @@ public final class LoginViewModel: ObservableObject {
     private(set) var error: Error?
     
     @Published
-    var inputEmail: String = ""
+    var email: String = ""
     
     @Published
     private(set) var isLoading: Bool = false
+    
+    @Published
+    private(set) var didLoginSucceed: Bool?
     
     private let loginUseCase: LoginUseCase
     private let validateEmailUseCase: ValidateEmailUseCase
@@ -33,7 +36,8 @@ public final class LoginViewModel: ObservableObject {
     public func login() async {
         isLoading = true
         do {
-            try await loginUseCase(email: inputEmail)
+            try await loginUseCase(email: email)
+            didLoginSucceed = true
         } catch {
             self.error = error
         }
@@ -46,7 +50,7 @@ public final class LoginViewModel: ObservableObject {
     }
     
     private func observeInputEmail() {
-        $inputEmail
+        $email
             .sink { [weak self] email in
                 guard let self else { return }
                 self.isValidEmail = self.validateEmailUseCase(email: email)

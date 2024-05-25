@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 public struct LoginView: View {
     
@@ -8,11 +9,11 @@ public struct LoginView: View {
     @State
     private var isErrorAlertPresented = false
     
-    let onLoginSuccess: () -> Void
+    let onLoginSuccess: (String) -> Void
     
     public init(
         viewModel: LoginViewModel,
-        onLoginSuccess: @escaping () -> Void
+        onLoginSuccess: @escaping (String) -> Void
     ) {
         self.viewModel = viewModel
         self.onLoginSuccess = onLoginSuccess
@@ -23,7 +24,7 @@ public struct LoginView: View {
             Spacer()
             TextField(
                 "Email",
-                text: $viewModel.inputEmail
+                text: $viewModel.email
             )
             .textFieldStyle(.roundedBorder)
             .padding()
@@ -33,7 +34,6 @@ public struct LoginView: View {
                 if !viewModel.isLoading {
                     Task {
                         await viewModel.login()
-                        onLoginSuccess()
                     }
                 }
             }
@@ -42,6 +42,7 @@ public struct LoginView: View {
             Spacer()
         }
         .padding()
+        .navigationTitle("Enter your email")
         .alert(
             viewModel.error.map(String.init(describing:)) ?? "",
             isPresented: $isErrorAlertPresented,
@@ -53,6 +54,10 @@ public struct LoginView: View {
         )
         .onReceive(viewModel.$error, perform: { error in
             isErrorAlertPresented = error.map { _ in true } ?? false
+        })
+        .onReceive(viewModel.$didLoginSucceed, perform: { didLoginSucceed in
+            guard let didLoginSucceed, didLoginSucceed else { return }
+            onLoginSuccess(viewModel.email)
         })
     }
     
