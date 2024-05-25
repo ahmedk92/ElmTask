@@ -1,35 +1,25 @@
-//
-//  ViewController.swift
-//  ElmTask
-//
-//  Created by Ahmed Khalaf on 25/05/2024.
-//
-
 import UIKit
+import Authentication
+import SwiftUI
 
-class RootViewController: UIViewController {
+class RootViewController: UIHostingController<RootView> {
     
-    weak var delegate: (any Delegate)?
+    private let viewModel: RootViewModel
     
-    init() {
-        super.init(nibName: nil, bundle: nil)
+    init(
+        viewModel: RootViewModel,
+        onAuthenticationStateChanged: @escaping (AuthenticationState) -> Void
+    ) {
+        self.viewModel = viewModel
+        super.init(
+            rootView: .init(
+                viewModel: viewModel,
+                onAuthenticationStateChanged: onAuthenticationStateChanged
+            )
+        )
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .red
-    }
-}
-
-extension RootViewController {
-    protocol Delegate: AnyObject {
-        func rootViewController(
-            _ rootViewController: Self,
-            didReceiveAuthenticationStateChangeEvent: Any
-        )
     }
 }

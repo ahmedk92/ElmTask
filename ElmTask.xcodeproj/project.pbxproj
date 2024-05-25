@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,9 @@
 		2842B03B2C0247B200E740B9 /* ElmTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2842B03A2C0247B200E740B9 /* ElmTaskUITestsLaunchTests.swift */; };
 		2842B0482C02481D00E740B9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2842B0472C02481D00E740B9 /* AppCoordinator.swift */; };
 		2842B04C2C0249BA00E740B9 /* AppCoordinatorViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2842B04B2C0249BA00E740B9 /* AppCoordinatorViewControllerFactory.swift */; };
+		28554F602C025B2D0013FFA4 /* Authentication in Frameworks */ = {isa = PBXBuildFile; productRef = 28554F5F2C025B2D0013FFA4 /* Authentication */; };
+		28C133B92C025E5400003631 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C133B82C025E5400003631 /* RootViewModel.swift */; };
+		28C133BB2C025FB200003631 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C133BA2C025FB200003631 /* RootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		2842B03A2C0247B200E740B9 /* ElmTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElmTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2842B0472C02481D00E740B9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		2842B04B2C0249BA00E740B9 /* AppCoordinatorViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorViewControllerFactory.swift; sourceTree = "<group>"; };
+		2842B04E2C02560800E740B9 /* Authentication */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Authentication; path = Packages/Authentication; sourceTree = "<group>"; };
+		28C133B82C025E5400003631 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		28C133BA2C025FB200003631 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28554F602C025B2D0013FFA4 /* Authentication in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +86,12 @@
 		2842B00B2C0247AA00E740B9 = {
 			isa = PBXGroup;
 			children = (
+				2842B04E2C02560800E740B9 /* Authentication */,
 				2842B0162C0247AA00E740B9 /* ElmTask */,
 				2842B02D2C0247B200E740B9 /* ElmTaskTests */,
 				2842B0372C0247B200E740B9 /* ElmTaskUITests */,
 				2842B0152C0247AA00E740B9 /* Products */,
+				2842B04F2C02580100E740B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,9 +147,18 @@
 			children = (
 				2842B0472C02481D00E740B9 /* AppCoordinator.swift */,
 				2842B04B2C0249BA00E740B9 /* AppCoordinatorViewControllerFactory.swift */,
+				28C133BA2C025FB200003631 /* RootView.swift */,
 				2842B01B2C0247AA00E740B9 /* RootViewController.swift */,
+				28C133B82C025E5400003631 /* RootViewModel.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		2842B04F2C02580100E740B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +177,9 @@
 			dependencies = (
 			);
 			name = ElmTask;
+			packageProductDependencies = (
+				28554F5F2C025B2D0013FFA4 /* Authentication */,
+			);
 			productName = ElmTask;
 			productReference = 2842B0142C0247AA00E740B9 /* ElmTask.app */;
 			productType = "com.apple.product-type.application";
@@ -231,6 +252,9 @@
 				Base,
 			);
 			mainGroup = 2842B00B2C0247AA00E740B9;
+			packageReferences = (
+				2842B0522C02582800E740B9 /* XCLocalSwiftPackageReference "Packages/Authentication" */,
+			);
 			productRefGroup = 2842B0152C0247AA00E740B9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -273,7 +297,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28C133B92C025E5400003631 /* RootViewModel.swift in Sources */,
 				2842B04C2C0249BA00E740B9 /* AppCoordinatorViewControllerFactory.swift in Sources */,
+				28C133BB2C025FB200003631 /* RootView.swift in Sources */,
 				2842B0482C02481D00E740B9 /* AppCoordinator.swift in Sources */,
 				2842B01C2C0247AA00E740B9 /* RootViewController.swift in Sources */,
 				2842B0182C0247AA00E740B9 /* AppDelegate.swift in Sources */,
@@ -457,7 +483,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,7 +511,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -615,6 +641,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		2842B0522C02582800E740B9 /* XCLocalSwiftPackageReference "Packages/Authentication" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Authentication;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		28554F5F2C025B2D0013FFA4 /* Authentication */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Authentication;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2842B00C2C0247AA00E740B9 /* Project object */;
 }
