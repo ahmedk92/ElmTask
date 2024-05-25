@@ -1,0 +1,620 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2842B0182C0247AA00E740B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2842B0172C0247AA00E740B9 /* AppDelegate.swift */; };
+		2842B01C2C0247AA00E740B9 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2842B01B2C0247AA00E740B9 /* RootViewController.swift */; };
+		2842B0212C0247B200E740B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2842B0202C0247B200E740B9 /* Assets.xcassets */; };
+		2842B0242C0247B200E740B9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2842B0232C0247B200E740B9 /* Base */; };
+		2842B02F2C0247B200E740B9 /* ElmTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2842B02E2C0247B200E740B9 /* ElmTaskTests.swift */; };
+		2842B0392C0247B200E740B9 /* ElmTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2842B0382C0247B200E740B9 /* ElmTaskUITests.swift */; };
+		2842B03B2C0247B200E740B9 /* ElmTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2842B03A2C0247B200E740B9 /* ElmTaskUITestsLaunchTests.swift */; };
+		2842B0482C02481D00E740B9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2842B0472C02481D00E740B9 /* AppCoordinator.swift */; };
+		2842B04C2C0249BA00E740B9 /* AppCoordinatorViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2842B04B2C0249BA00E740B9 /* AppCoordinatorViewControllerFactory.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2842B02B2C0247B200E740B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2842B00C2C0247AA00E740B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2842B0132C0247AA00E740B9;
+			remoteInfo = ElmTask;
+		};
+		2842B0352C0247B200E740B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2842B00C2C0247AA00E740B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2842B0132C0247AA00E740B9;
+			remoteInfo = ElmTask;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2842B0142C0247AA00E740B9 /* ElmTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElmTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2842B0172C0247AA00E740B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2842B01B2C0247AA00E740B9 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		2842B0202C0247B200E740B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2842B0232C0247B200E740B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2842B0252C0247B200E740B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2842B02A2C0247B200E740B9 /* ElmTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElmTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2842B02E2C0247B200E740B9 /* ElmTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElmTaskTests.swift; sourceTree = "<group>"; };
+		2842B0342C0247B200E740B9 /* ElmTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElmTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2842B0382C0247B200E740B9 /* ElmTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElmTaskUITests.swift; sourceTree = "<group>"; };
+		2842B03A2C0247B200E740B9 /* ElmTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElmTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2842B0472C02481D00E740B9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		2842B04B2C0249BA00E740B9 /* AppCoordinatorViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorViewControllerFactory.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2842B0112C0247AA00E740B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2842B0272C0247B200E740B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2842B0312C0247B200E740B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2842B00B2C0247AA00E740B9 = {
+			isa = PBXGroup;
+			children = (
+				2842B0162C0247AA00E740B9 /* ElmTask */,
+				2842B02D2C0247B200E740B9 /* ElmTaskTests */,
+				2842B0372C0247B200E740B9 /* ElmTaskUITests */,
+				2842B0152C0247AA00E740B9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2842B0152C0247AA00E740B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2842B0142C0247AA00E740B9 /* ElmTask.app */,
+				2842B02A2C0247B200E740B9 /* ElmTaskTests.xctest */,
+				2842B0342C0247B200E740B9 /* ElmTaskUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2842B0162C0247AA00E740B9 /* ElmTask */ = {
+			isa = PBXGroup;
+			children = (
+				2842B0252C0247B200E740B9 /* Info.plist */,
+				2842B0172C0247AA00E740B9 /* AppDelegate.swift */,
+				2842B0202C0247B200E740B9 /* Assets.xcassets */,
+				2842B0492C02497F00E740B9 /* Flows */,
+				2842B0222C0247B200E740B9 /* LaunchScreen.storyboard */,
+			);
+			path = ElmTask;
+			sourceTree = "<group>";
+		};
+		2842B02D2C0247B200E740B9 /* ElmTaskTests */ = {
+			isa = PBXGroup;
+			children = (
+				2842B02E2C0247B200E740B9 /* ElmTaskTests.swift */,
+			);
+			path = ElmTaskTests;
+			sourceTree = "<group>";
+		};
+		2842B0372C0247B200E740B9 /* ElmTaskUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2842B0382C0247B200E740B9 /* ElmTaskUITests.swift */,
+				2842B03A2C0247B200E740B9 /* ElmTaskUITestsLaunchTests.swift */,
+			);
+			path = ElmTaskUITests;
+			sourceTree = "<group>";
+		};
+		2842B0492C02497F00E740B9 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				2842B04A2C02498E00E740B9 /* Root */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		2842B04A2C02498E00E740B9 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				2842B0472C02481D00E740B9 /* AppCoordinator.swift */,
+				2842B04B2C0249BA00E740B9 /* AppCoordinatorViewControllerFactory.swift */,
+				2842B01B2C0247AA00E740B9 /* RootViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2842B0132C0247AA00E740B9 /* ElmTask */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2842B03E2C0247B200E740B9 /* Build configuration list for PBXNativeTarget "ElmTask" */;
+			buildPhases = (
+				2842B0102C0247AA00E740B9 /* Sources */,
+				2842B0112C0247AA00E740B9 /* Frameworks */,
+				2842B0122C0247AA00E740B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ElmTask;
+			productName = ElmTask;
+			productReference = 2842B0142C0247AA00E740B9 /* ElmTask.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2842B0292C0247B200E740B9 /* ElmTaskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2842B0412C0247B200E740B9 /* Build configuration list for PBXNativeTarget "ElmTaskTests" */;
+			buildPhases = (
+				2842B0262C0247B200E740B9 /* Sources */,
+				2842B0272C0247B200E740B9 /* Frameworks */,
+				2842B0282C0247B200E740B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2842B02C2C0247B200E740B9 /* PBXTargetDependency */,
+			);
+			name = ElmTaskTests;
+			productName = ElmTaskTests;
+			productReference = 2842B02A2C0247B200E740B9 /* ElmTaskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2842B0332C0247B200E740B9 /* ElmTaskUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2842B0442C0247B200E740B9 /* Build configuration list for PBXNativeTarget "ElmTaskUITests" */;
+			buildPhases = (
+				2842B0302C0247B200E740B9 /* Sources */,
+				2842B0312C0247B200E740B9 /* Frameworks */,
+				2842B0322C0247B200E740B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2842B0362C0247B200E740B9 /* PBXTargetDependency */,
+			);
+			name = ElmTaskUITests;
+			productName = ElmTaskUITests;
+			productReference = 2842B0342C0247B200E740B9 /* ElmTaskUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2842B00C2C0247AA00E740B9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					2842B0132C0247AA00E740B9 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					2842B0292C0247B200E740B9 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 2842B0132C0247AA00E740B9;
+					};
+					2842B0332C0247B200E740B9 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 2842B0132C0247AA00E740B9;
+					};
+				};
+			};
+			buildConfigurationList = 2842B00F2C0247AA00E740B9 /* Build configuration list for PBXProject "ElmTask" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2842B00B2C0247AA00E740B9;
+			productRefGroup = 2842B0152C0247AA00E740B9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2842B0132C0247AA00E740B9 /* ElmTask */,
+				2842B0292C0247B200E740B9 /* ElmTaskTests */,
+				2842B0332C0247B200E740B9 /* ElmTaskUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2842B0122C0247AA00E740B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2842B0212C0247B200E740B9 /* Assets.xcassets in Resources */,
+				2842B0242C0247B200E740B9 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2842B0282C0247B200E740B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2842B0322C0247B200E740B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2842B0102C0247AA00E740B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2842B04C2C0249BA00E740B9 /* AppCoordinatorViewControllerFactory.swift in Sources */,
+				2842B0482C02481D00E740B9 /* AppCoordinator.swift in Sources */,
+				2842B01C2C0247AA00E740B9 /* RootViewController.swift in Sources */,
+				2842B0182C0247AA00E740B9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2842B0262C0247B200E740B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2842B02F2C0247B200E740B9 /* ElmTaskTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2842B0302C0247B200E740B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2842B03B2C0247B200E740B9 /* ElmTaskUITestsLaunchTests.swift in Sources */,
+				2842B0392C0247B200E740B9 /* ElmTaskUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2842B02C2C0247B200E740B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2842B0132C0247AA00E740B9 /* ElmTask */;
+			targetProxy = 2842B02B2C0247B200E740B9 /* PBXContainerItemProxy */;
+		};
+		2842B0362C0247B200E740B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2842B0132C0247AA00E740B9 /* ElmTask */;
+			targetProxy = 2842B0352C0247B200E740B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2842B0222C0247B200E740B9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2842B0232C0247B200E740B9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2842B03C2C0247B200E740B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2842B03D2C0247B200E740B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2842B03F2C0247B200E740B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BCX3Z4NU85;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ElmTask/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.ahmedk92.ElmTask;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2842B0402C0247B200E740B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BCX3Z4NU85;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ElmTask/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.ahmedk92.ElmTask;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2842B0422C0247B200E740B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BCX3Z4NU85;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.ahmedk92.ElmTaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ElmTask.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ElmTask";
+			};
+			name = Debug;
+		};
+		2842B0432C0247B200E740B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BCX3Z4NU85;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.ahmedk92.ElmTaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ElmTask.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ElmTask";
+			};
+			name = Release;
+		};
+		2842B0452C0247B200E740B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BCX3Z4NU85;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.ahmedk92.ElmTaskUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ElmTask;
+			};
+			name = Debug;
+		};
+		2842B0462C0247B200E740B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BCX3Z4NU85;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.ahmedk92.ElmTaskUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ElmTask;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2842B00F2C0247AA00E740B9 /* Build configuration list for PBXProject "ElmTask" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2842B03C2C0247B200E740B9 /* Debug */,
+				2842B03D2C0247B200E740B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2842B03E2C0247B200E740B9 /* Build configuration list for PBXNativeTarget "ElmTask" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2842B03F2C0247B200E740B9 /* Debug */,
+				2842B0402C0247B200E740B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2842B0412C0247B200E740B9 /* Build configuration list for PBXNativeTarget "ElmTaskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2842B0422C0247B200E740B9 /* Debug */,
+				2842B0432C0247B200E740B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2842B0442C0247B200E740B9 /* Build configuration list for PBXNativeTarget "ElmTaskUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2842B0452C0247B200E740B9 /* Debug */,
+				2842B0462C0247B200E740B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2842B00C2C0247AA00E740B9 /* Project object */;
+}
