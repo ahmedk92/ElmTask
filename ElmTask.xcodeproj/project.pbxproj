@@ -19,6 +19,7 @@
 		28554F602C025B2D0013FFA4 /* Authentication in Frameworks */ = {isa = PBXBuildFile; productRef = 28554F5F2C025B2D0013FFA4 /* Authentication */; };
 		28C133B92C025E5400003631 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C133B82C025E5400003631 /* RootViewModel.swift */; };
 		28C133BB2C025FB200003631 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C133BA2C025FB200003631 /* RootView.swift */; };
+		28C133BD2C02683800003631 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C133BC2C02683800003631 /* AppDIContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		2842B04E2C02560800E740B9 /* Authentication */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Authentication; path = Packages/Authentication; sourceTree = "<group>"; };
 		28C133B82C025E5400003631 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		28C133BA2C025FB200003631 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		28C133BC2C02683800003631 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				2842B0472C02481D00E740B9 /* AppCoordinator.swift */,
 				2842B04B2C0249BA00E740B9 /* AppCoordinatorViewControllerFactory.swift */,
+				28C133BC2C02683800003631 /* AppDIContainer.swift */,
 				28C133BA2C025FB200003631 /* RootView.swift */,
 				2842B01B2C0247AA00E740B9 /* RootViewController.swift */,
 				28C133B82C025E5400003631 /* RootViewModel.swift */,
@@ -298,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28C133B92C025E5400003631 /* RootViewModel.swift in Sources */,
+				28C133BD2C02683800003631 /* AppDIContainer.swift in Sources */,
 				2842B04C2C0249BA00E740B9 /* AppCoordinatorViewControllerFactory.swift in Sources */,
 				28C133BB2C025FB200003631 /* RootView.swift in Sources */,
 				2842B0482C02481D00E740B9 /* AppCoordinator.swift in Sources */,

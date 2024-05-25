@@ -4,9 +4,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private lazy var appCoordinator: AppCoordinator = .init(
-        viewControllerFactory: AppCoordinatorViewControllerFactory()
-    )
+    private lazy var appCoordinator: AppCoordinator = .init()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         appCoordinator.start(in: &window)

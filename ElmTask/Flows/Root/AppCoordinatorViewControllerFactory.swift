@@ -1,24 +1,35 @@
 import UIKit
 import Authentication
 
-final class AppCoordinatorViewControllerFactory: AppCoordinator.ViewControllerFactory {
+@MainActor
+final class AppCoordinatorViewControllerFactory {
+    private let authenticationDIContainer: AuthenticationDIContainer
+    
+    init(authenticationDIContainer: AuthenticationDIContainer) {
+        self.authenticationDIContainer = authenticationDIContainer
+    }
+    
     func makeRootViewController(
         onAuthenticationStateChanged: @escaping (AuthenticationState) -> Void
     ) -> RootViewController {
         .init(
             viewModel: .init(
-                getAuthenticationStateUseCase: .init(
-                    repository: MockAuthenticationRepository()
-                )
+                getAuthenticationStateUseCase: authenticationDIContainer
+                    .makeGetAuthenticationStateUseCase()
             ),
             onAuthenticationStateChanged: onAuthenticationStateChanged
         )
     }
-}
-
-private class MockAuthenticationRepository: GetAuthenticationStateUseCase.Repository {
-    func authenticationState() async throws -> AuthenticationState {
-        .loggedOut
-    }
     
+    func makeLoginViewController(
+        onLoginSuccess: @escaping () -> Void
+    ) -> LoginViewController {
+        .init(
+            viewModel: .init(
+                loginUseCase: authenticationDIContainer.makeLoginUseCase(),
+                validateEmailUseCase: authenticationDIContainer.makeValidateEmailUseCase()
+            ),
+            onLoginSuccess: onLoginSuccess
+        )
+    }
 }

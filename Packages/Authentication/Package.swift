@@ -26,16 +26,29 @@ let package = Package(
             name: DOMAIN_TARGET_NAME
         ),
         .target(
+            name: DATA_TARGET_NAME,
+            dependencies: [
+                .target(name: DOMAIN_TARGET_NAME)
+            ]
+        ),
+        .target(
             name: UI_TARGET_NAME,
             dependencies: [
                 .target(name: DOMAIN_TARGET_NAME)
             ]
         ),
         .target(
-            name: UMBRELLA_TARGET_NAME,
+            name: DI_TARGET_NAME,
             dependencies: [
                 .target(name: DOMAIN_TARGET_NAME),
-                .target(name: UI_TARGET_NAME)
+                .target(name: UI_TARGET_NAME),
+                .target(name: DATA_TARGET_NAME)
+            ]
+        ),
+        .target(
+            name: UMBRELLA_TARGET_NAME,
+            dependencies: [
+                .target(name: DI_TARGET_NAME),
             ]
         )
     ]
