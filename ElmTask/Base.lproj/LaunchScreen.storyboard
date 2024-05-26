@@ -17,17 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kHw-CW-qKB">
-                                <rect key="frame" x="141" y="326" width="106.66666666666669" height="40.666666666666686"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kHw-CW-qKB">
+                                <rect key="frame" x="143.33333333333334" y="418.33333333333331" width="106.66666666666666" height="40.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elm task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FlO-yT-y9I">
-                                        <rect key="frame" x="21.333333333333336" y="0.0" width="64.333333333333314" height="20.333333333333332"/>
+                                        <rect key="frame" x="21" y="0.0" width="64.333333333333329" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ahmed Khalaf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwS-fQ-8wD">
-                                        <rect key="frame" x="0.0" y="20.333333333333336" width="106.66666666666667" height="20.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="20.333333333333371" width="106.66666666666667" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -37,6 +37,10 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kHw-CW-qKB" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="fZw-Go-ypy"/>
+                            <constraint firstItem="kHw-CW-qKB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xGh-CB-8GT"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
