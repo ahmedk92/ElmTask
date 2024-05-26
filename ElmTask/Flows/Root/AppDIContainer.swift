@@ -23,7 +23,7 @@ final class AppDIContainer {
 private class ElmerAPIAccessTokenAccessorShim: ElmerAPIAccessTokenAccessor {
     weak var appDIContainer: AppDIContainer?
     
-    init(appDIContainer: AppDIContainer? = nil) {
+    init(appDIContainer: AppDIContainer?) {
         self.appDIContainer = appDIContainer
     }
     
