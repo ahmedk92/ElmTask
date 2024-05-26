@@ -2,6 +2,12 @@ import IncidentsDomain
 import SharedData
 import Foundation
 
+private let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    return formatter
+}()
+
 extension IncidentsDomain.Incident {
     public init(incident: SharedData.Incident) throws {
         self.init(
@@ -12,8 +18,17 @@ extension IncidentsDomain.Incident {
             status: try .init(status: incident.status),
             priority: incident.priority ?? .max,
             workerId: incident.assigneeId,
-            imageURL: (incident.medias.first?.url).flatMap(URL.init(string:))
+            imageURL: (incident.medias.first?.url).flatMap(URL.init(string:)),
+            createdAt: try Self.parseDate(incident.createdAt)
         )
+    }
+    
+    private static func parseDate(_ dateString: String) throws -> Date {
+        if let date = dateFormatter.date(from: dateString) {
+            return date
+        } else {
+            throw IncidentTransformError.unhandledDateFormat(dateString: dateString)
+        }
     }
 }
 
@@ -36,4 +51,5 @@ extension IncidentsDomain.Incident.Status {
 
 public enum IncidentTransformError: Error {
     case unknownStatusId(statusId: Int)
+    case unhandledDateFormat(dateString: String)
 }

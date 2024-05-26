@@ -9,6 +9,7 @@ public struct Incident {
     public let priority: Int
     public let workerId: String?
     public let imageURL: URL?
+    public let createdAt: Date
     
     public init(
         id: String,
@@ -18,7 +19,8 @@ public struct Incident {
         status: Status,
         priority: Int,
         workerId: String?,
-        imageURL: URL?
+        imageURL: URL?,
+        createdAt: Date
     ) {
         self.id = id
         self.description = description
@@ -28,6 +30,7 @@ public struct Incident {
         self.priority = priority
         self.workerId = workerId
         self.imageURL = imageURL
+        self.createdAt = createdAt
     }
 }
 
