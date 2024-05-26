@@ -96,7 +96,7 @@ private struct IncidentRowView: View {
     let incident: Incident
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             titleView
                 .font(.headline)
             statusView
@@ -107,12 +107,10 @@ private struct IncidentRowView: View {
     private var titleView: some View {
         Text(incident.description)
             .lineLimit(1)
-            .frame(alignment: .leading)
     }
     
     private var statusView: some View {
         Text(incident.status.string)
-            .frame(alignment: .leading)
     }
 }
 
