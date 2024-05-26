@@ -66,7 +66,16 @@ final class AppCoordinator {
     }
     
     private func showIncidentsListScreen() {
-        let viewController = viewControllerFactory.makeIncidentsViewController()
+        let viewController = viewControllerFactory.makeIncidentsViewController(
+            onAddIncident: { [weak self] in
+                self?.showAddIncidentScreen()
+            }
+        )
         navigationController?.setViewControllers([viewController], animated: true)
+    }
+    
+    private func showAddIncidentScreen() {
+        let viewController = viewControllerFactory.makeAddIncidentViewController()
+        navigationController?.present(viewController, animated: true)
     }
 }

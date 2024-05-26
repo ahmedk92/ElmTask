@@ -19,4 +19,8 @@ public final class IncidentsDIContainer {
     public func makeGetIncidentsUseCase() -> GetIncidentsUseCase {
         .init(repository: incidentsRepository)
     }
+    
+    public func makeAddIncidentUseCase() -> AddIncidentUseCase {
+        .init(repository: incidentsRepository)
+    }
 }

@@ -6,11 +6,17 @@ public struct IncidentsView: View {
     @ObservedObject
     private var viewModel: IncidentsViewModel
     
+    let onAddIncident: () -> Void
+    
     @State
     private var isErrorAlertPresented: Bool = false
     
-    public init(viewModel: IncidentsViewModel) {
+    public init(
+        viewModel: IncidentsViewModel,
+        onAddIncident: @escaping () -> Void
+    ) {
         self.viewModel = viewModel
+        self.onAddIncident = onAddIncident
     }
     
     public var body: some View {
@@ -18,6 +24,11 @@ public struct IncidentsView: View {
             filtersView
             incidentsList
         }.navigationTitle("Incidents")
+            .toolbar {
+                Button("Add") {
+                    onAddIncident()
+                }
+            }
             .alert(
                 viewModel.error.map(String.init(describing:)) ?? "",
                 isPresented: $isErrorAlertPresented,

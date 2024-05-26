@@ -1,10 +1,10 @@
 import UIKit
 import SwiftUI
 
-public final class IncidentsViewController: UIHostingController<IncidentsView> {
-    private let viewModel: IncidentsViewModel
+public class AddIncidentViewController: UIHostingController<AddIncidentView> {
+    private let viewModel: AddIncidentViewModel
     
-    public init(viewModel: IncidentsViewModel) {
+    public init(viewModel: AddIncidentViewModel) {
         self.viewModel = viewModel
         super.init(rootView: .init(viewModel: viewModel))
     }

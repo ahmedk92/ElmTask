@@ -56,10 +56,21 @@ final class AppCoordinatorViewControllerFactory {
         )
     }
     
-    func makeIncidentsViewController() -> IncidentsViewController {
+    func makeIncidentsViewController(
+        onAddIncident: @escaping () -> Void
+    ) -> IncidentsViewController {
         .init(
             viewModel: .init(
                 getIncidentsUseCase: incidentsDIContainer.makeGetIncidentsUseCase()
+            ),
+            onAddIncident: onAddIncident
+        )
+    }
+    
+    func makeAddIncidentViewController() -> AddIncidentViewController {
+        .init(
+            viewModel: .init(
+                addIncidentUseCase: incidentsDIContainer.makeAddIncidentUseCase()
             )
         )
     }

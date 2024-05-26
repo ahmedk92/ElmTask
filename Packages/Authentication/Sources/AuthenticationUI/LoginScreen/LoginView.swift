@@ -7,7 +7,10 @@ public struct LoginView: View {
     private var viewModel: LoginViewModel
     
     @State
-    private var isErrorAlertPresented = false
+    private var isErrorAlertPresented: Bool = false
+    
+    @FocusState
+    private var isEmailtextFieldFocused: Bool?
     
     let onLoginSuccess: (String) -> Void
     
@@ -26,6 +29,9 @@ public struct LoginView: View {
                 "Email",
                 text: $viewModel.email
             )
+            .textInputAutocapitalization(.never)
+            .keyboardType(.emailAddress)
+            .focused($isEmailtextFieldFocused, equals: true)
             .textFieldStyle(.roundedBorder)
             .padding()
             .disabled(viewModel.isLoading)
@@ -52,10 +58,13 @@ public struct LoginView: View {
                 }
             }
         )
+        .onAppear {
+            isEmailtextFieldFocused = true
+        }
         .onReceive(viewModel.$error, perform: { error in
             isErrorAlertPresented = error.map { _ in true } ?? false
         })
-        .onReceive(viewModel.$didLoginSucceed, perform: { didLoginSucceed in
+        .onChange(of: viewModel.didLoginSucceed, perform: { didLoginSucceed in
             guard let didLoginSucceed, didLoginSucceed else { return }
             onLoginSuccess(viewModel.email)
         })

@@ -1,7 +1,8 @@
 import IncidentsDomain
 import SharedData
 
-public final class IncidentsRepository: GetIncidentsUseCase.Repository {
+public final class IncidentsRepository: GetIncidentsUseCase.Repository,
+                                        AddIncidentUseCase.Repository {
     private let elmerAPIClient: ElmerAPIClientProtocol
     
     public init(elmerAPIClient: ElmerAPIClientProtocol) {
@@ -12,6 +13,10 @@ public final class IncidentsRepository: GetIncidentsUseCase.Repository {
         try await elmerAPIClient
             .incidents()
             .map(IncidentsDomain.Incident.init(incident:))
+    }
+    
+    public func addIncident(request: AddIncidentRequest) async throws {
+        
     }
 }
 

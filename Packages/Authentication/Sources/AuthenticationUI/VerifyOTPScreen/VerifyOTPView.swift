@@ -39,7 +39,7 @@ public struct VerifyOTPView: View {
             .onReceive(viewModel.$cursorIndex, perform: { cursorIndex in
                 self.cursorIndex = cursorIndex
             })
-            .onReceive(viewModel.$didVerificationSucceed, perform: { didVerificationSucceed in
+            .onChange(of: viewModel.didVerificationSucceed, perform: { didVerificationSucceed in
                 guard let didVerificationSucceed, didVerificationSucceed else { return }
                 onVerificationSuccess()
             })
@@ -47,33 +47,26 @@ public struct VerifyOTPView: View {
     
     private var blocks: some View {
         HStack {
-            TextField(
-                "",
-                text: $viewModel.digit1
-            )
-            .textFieldStyle(.roundedBorder)
+            otpBlockView(binding: $viewModel.digit1)
             .focused($cursorIndex, equals: .zero)
             
-            TextField(
-                "",
-                text: $viewModel.digit2
-            )
-            .textFieldStyle(.roundedBorder)
+            otpBlockView(binding: $viewModel.digit2)
             .focused($cursorIndex, equals: 1)
             
-            TextField(
-                "",
-                text: $viewModel.digit3
-            )
-            .textFieldStyle(.roundedBorder)
+            otpBlockView(binding: $viewModel.digit3)
             .focused($cursorIndex, equals: 2)
             
-            TextField(
-                "",
-                text: $viewModel.digit4
-            )
-            .textFieldStyle(.roundedBorder)
+            otpBlockView(binding: $viewModel.digit4)
             .focused($cursorIndex, equals: 3)
-        }
+        }.padding()
+    }
+    
+    private func otpBlockView(binding: Binding<String>) -> some View {
+        TextField(
+            "",
+            text: binding
+        )
+        .keyboardType(.numberPad)
+        .textFieldStyle(.roundedBorder)
     }
 }
