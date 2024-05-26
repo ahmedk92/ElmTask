@@ -56,7 +56,6 @@
 		2842B03A2C0247B200E740B9 /* ElmTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElmTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2842B0472C02481D00E740B9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		2842B04B2C0249BA00E740B9 /* AppCoordinatorViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorViewControllerFactory.swift; sourceTree = "<group>"; };
-		2842B04E2C02560800E740B9 /* Authentication */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Authentication; path = Packages/Authentication; sourceTree = "<group>"; };
 		28C133B82C025E5400003631 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		28C133BA2C025FB200003631 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		28C133BC2C02683800003631 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
@@ -94,7 +93,6 @@
 		2842B00B2C0247AA00E740B9 = {
 			isa = PBXGroup;
 			children = (
-				2842B04E2C02560800E740B9 /* Authentication */,
 				2842B0162C0247AA00E740B9 /* ElmTask */,
 				2842B02D2C0247B200E740B9 /* ElmTaskTests */,
 				2842B0372C0247B200E740B9 /* ElmTaskUITests */,
