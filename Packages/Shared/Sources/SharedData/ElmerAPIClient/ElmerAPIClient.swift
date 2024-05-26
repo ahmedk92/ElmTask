@@ -5,6 +5,7 @@ private let EXPECTED_LOGIN_RESPONSE = "OK"
 public protocol ElmerAPIClientProtocol {
     func login(email: String) async throws
     func verify(email: String, otp: String) async throws -> ElmerAPIToken
+    func incidents() async throws -> [Incident]
 }
 
 public final class ElmerAPIClient: ElmerAPIClientProtocol {
@@ -13,7 +14,7 @@ public final class ElmerAPIClient: ElmerAPIClientProtocol {
     
     public init(
         urlSession: URLSession,
-        requestFactory: ElmerAPIRequestFactoryProtocol = ElmerAPIRequestFactory()
+        requestFactory: ElmerAPIRequestFactoryProtocol
     ) {
         self.urlSession = urlSession
         self.requestFactory = requestFactory
@@ -53,11 +54,17 @@ public final class ElmerAPIClient: ElmerAPIClientProtocol {
             otp: otp
         )
         
-        let (data, _) = try await urlSession.data(
-            for: request
-        )
-        
-        return try JSONDecoder().decode(ElmerAPIToken.self, from: data)
+        let token: ElmerAPIToken = try await urlSession.json(for: request)
+        return token
+    }
+    
+    public func incidents() async throws -> [Incident] {
+        let request = try await requestFactory.makeGetIncidentsRequest()
+        struct Response: Decodable {
+            let incidents: [Incident]
+        }
+        let response: Response = try await urlSession.json(for: request)
+        return response.incidents
     }
 }
 
@@ -67,5 +74,13 @@ extension ElmerAPIClient {
             expectedLoginResponse: String,
             actualLoginResponse: String?
         )
+    }
+}
+
+private extension URLSession {
+    func json<T: Decodable>(for request: URLRequest) async throws -> T {
+        let (data, _) = try await data(for: request)
+        let json = try JSONDecoder().decode(T.self, from: data)
+        return json
     }
 }

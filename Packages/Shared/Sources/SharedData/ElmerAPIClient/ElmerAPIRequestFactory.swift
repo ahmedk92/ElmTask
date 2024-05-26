@@ -6,13 +6,17 @@ public protocol ElmerAPIRequestFactoryProtocol {
         email: String,
         otp: String
     ) throws -> URLRequest
+    func makeGetIncidentsRequest() async throws -> URLRequest
 }
 
 public final class ElmerAPIRequestFactory: ElmerAPIRequestFactoryProtocol {
+    private let accessTokenAccessor: ElmerAPIAccessTokenAccessor
     private let urlComposer: URLComposer = .init()
     private let requestBodyEncoder: RequestBodyEncoder = .init()
     
-    public init() {}
+    public init(accessTokenAccessor: ElmerAPIAccessTokenAccessor) {
+        self.accessTokenAccessor = accessTokenAccessor
+    }
     
     public func makeLoginRequest(email: String) throws -> URLRequest {
         guard let url = urlComposer.makeLoginURL() else { throw Error.invalidURL }
@@ -37,6 +41,21 @@ public final class ElmerAPIRequestFactory: ElmerAPIRequestFactoryProtocol {
         )
         return request
     }
+    
+    public func makeGetIncidentsRequest() async throws -> URLRequest {
+        guard let url = urlComposer.makeGetIncidentsURL() else { throw Error.invalidURL }
+        guard let accessToken = try await accessTokenAccessor.accessToken() else {
+            throw Error.missingAccessToken
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.get
+        request.setValue(
+            "Bearer \(accessToken)",
+            forHTTPHeaderField: "Authorization"
+        )
+        return request
+    }
 }
 
 private enum HTTPMethod {
@@ -57,7 +76,13 @@ private final class URLComposer {
         return urlComponents.url
     }
     
-    func makeBaseURLComponents() -> URLComponents {
+    func makeGetIncidentsURL() -> URL? {
+        var urlComponents: URLComponents = makeBaseURLComponents()
+        urlComponents.path = "/incident"
+        return urlComponents.url
+    }
+    
+    private func makeBaseURLComponents() -> URLComponents {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "ba4caf56-6e45-4662-bbfb-20878b8cd42e.mock.pstmn.io"
@@ -68,6 +93,7 @@ private final class URLComposer {
 extension ElmerAPIRequestFactory {
     public enum Error: Swift.Error {
         case invalidURL
+        case missingAccessToken
     }
 }
 

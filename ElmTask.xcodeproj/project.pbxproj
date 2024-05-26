@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		282EED3F2C02B7E10025A87A /* Incidents in Frameworks */ = {isa = PBXBuildFile; productRef = 282EED3E2C02B7E10025A87A /* Incidents */; };
 		2842B0182C0247AA00E740B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2842B0172C0247AA00E740B9 /* AppDelegate.swift */; };
 		2842B01C2C0247AA00E740B9 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2842B01B2C0247AA00E740B9 /* RootViewController.swift */; };
 		2842B0212C0247B200E740B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2842B0202C0247B200E740B9 /* Assets.xcassets */; };
@@ -20,6 +21,8 @@
 		28C133B92C025E5400003631 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C133B82C025E5400003631 /* RootViewModel.swift */; };
 		28C133BB2C025FB200003631 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C133BA2C025FB200003631 /* RootView.swift */; };
 		28C133BD2C02683800003631 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C133BC2C02683800003631 /* AppDIContainer.swift */; };
+		28D6E2FD2C02B49C004C8EC5 /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = 28D6E2FC2C02B49C004C8EC5 /* Shared */; };
+		28D6E3022C02B4C9004C8EC5 /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = 28D6E3012C02B4C9004C8EC5 /* Shared */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +67,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D6E3022C02B4C9004C8EC5 /* Shared in Frameworks */,
 				28554F602C025B2D0013FFA4 /* Authentication in Frameworks */,
+				282EED3F2C02B7E10025A87A /* Incidents in Frameworks */,
+				28D6E2FD2C02B49C004C8EC5 /* Shared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +188,9 @@
 			name = ElmTask;
 			packageProductDependencies = (
 				28554F5F2C025B2D0013FFA4 /* Authentication */,
+				28D6E2FC2C02B49C004C8EC5 /* Shared */,
+				28D6E3012C02B4C9004C8EC5 /* Shared */,
+				282EED3E2C02B7E10025A87A /* Incidents */,
 			);
 			productName = ElmTask;
 			productReference = 2842B0142C0247AA00E740B9 /* ElmTask.app */;
@@ -257,6 +266,8 @@
 			mainGroup = 2842B00B2C0247AA00E740B9;
 			packageReferences = (
 				2842B0522C02582800E740B9 /* XCLocalSwiftPackageReference "Packages/Authentication" */,
+				28D6E2FB2C02B49C004C8EC5 /* XCLocalSwiftPackageReference "Packages/Shared" */,
+				282EED3D2C02B7E10025A87A /* XCLocalSwiftPackageReference "Packages/Incidents" */,
 			);
 			productRefGroup = 2842B0152C0247AA00E740B9 /* Products */;
 			projectDirPath = "";
@@ -647,16 +658,36 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
+		282EED3D2C02B7E10025A87A /* XCLocalSwiftPackageReference "Packages/Incidents" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Incidents;
+		};
 		2842B0522C02582800E740B9 /* XCLocalSwiftPackageReference "Packages/Authentication" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Authentication;
 		};
+		28D6E2FB2C02B49C004C8EC5 /* XCLocalSwiftPackageReference "Packages/Shared" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Shared;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		282EED3E2C02B7E10025A87A /* Incidents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Incidents;
+		};
 		28554F5F2C025B2D0013FFA4 /* Authentication */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Authentication;
+		};
+		28D6E2FC2C02B49C004C8EC5 /* Shared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Shared;
+		};
+		28D6E3012C02B4C9004C8EC5 /* Shared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Shared;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

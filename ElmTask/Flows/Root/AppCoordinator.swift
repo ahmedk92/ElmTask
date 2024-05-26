@@ -6,7 +6,8 @@ final class AppCoordinator {
     private let appDIContainer: AppDIContainer = .init()
     private lazy var viewControllerFactory:
     AppCoordinatorViewControllerFactory = .init(
-        authenticationDIContainer: appDIContainer.makeAuthenticationDIContainer(),
+        authenticationDIContainer: appDIContainer.authenticationDIContainer,
+        incidentsDIContainer: appDIContainer.incidentsDIContainer,
         executeAsync: { asyncClosure in
             Task { try await asyncClosure() }
         }
@@ -65,6 +66,7 @@ final class AppCoordinator {
     }
     
     private func showIncidentsListScreen() {
-        navigationController?.setViewControllers([UIViewController()], animated: true)
+        let viewController = viewControllerFactory.makeIncidentsViewController()
+        navigationController?.setViewControllers([viewController], animated: true)
     }
 }

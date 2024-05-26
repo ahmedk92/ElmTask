@@ -3,7 +3,7 @@
 
 import PackageDescription
 
-private let PACKAGE_NAME = "Authentication"
+private let PACKAGE_NAME = "Shared"
 private let DOMAIN_TARGET_NAME = PACKAGE_NAME + "Domain"
 private let DATA_TARGET_NAME = PACKAGE_NAME + "Data"
 private let UI_TARGET_NAME = PACKAGE_NAME + "UI"
@@ -20,9 +20,12 @@ let package = Package(
                 UMBRELLA_TARGET_NAME
             ]
         ),
-    ],
-    dependencies: [
-        .package(path: "../Shared")
+        .library(
+            name: DATA_TARGET_NAME,
+            targets: [
+                DATA_TARGET_NAME
+            ]
+        ),
     ],
     targets: [
         .target(
@@ -31,8 +34,7 @@ let package = Package(
         .target(
             name: DATA_TARGET_NAME,
             dependencies: [
-                .target(name: DOMAIN_TARGET_NAME),
-                .product(name: "SharedData", package: "Shared")
+                .target(name: DOMAIN_TARGET_NAME)
             ]
         ),
         .target(

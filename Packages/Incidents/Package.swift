@@ -3,7 +3,7 @@
 
 import PackageDescription
 
-private let PACKAGE_NAME = "Authentication"
+private let PACKAGE_NAME = "Incidents"
 private let DOMAIN_TARGET_NAME = PACKAGE_NAME + "Domain"
 private let DATA_TARGET_NAME = PACKAGE_NAME + "Data"
 private let UI_TARGET_NAME = PACKAGE_NAME + "UI"

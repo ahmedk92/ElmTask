@@ -1,4 +1,5 @@
 import AuthenticationDomain
+import SharedData
 
 public class AuthenticationRepository: 
     GetAuthenticationStateUseCase.Repository,

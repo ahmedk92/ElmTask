@@ -2,17 +2,14 @@ import AuthenticationDomain
 import AuthenticationUI
 import AuthenticationData
 import Foundation
+import SharedData
 
 public final class AuthenticationDIContainer {
     private let userDefaults: UserDefaults
-    private let urlSession: URLSession
+    private let elmerAPIClient: ElmerAPIClientProtocol
     
-    private lazy var authenticationStateDataSource: AuthenticationStateDataSourceProtocol = AuthenticationStateDataSource(
+    private lazy var authenticationStateDataSource: AuthenticationStateDataSource = .init(
         userDefaults: userDefaults
-    )
-    
-    private lazy var elmerAPIClient: ElmerAPIClientProtocol = ElmerAPIClient(
-        urlSession: urlSession
     )
     
     private lazy var authenticationRepository: AuthenticationRepository = .init(
@@ -20,12 +17,16 @@ public final class AuthenticationDIContainer {
         elmerAPIClient: elmerAPIClient
     )
     
+    public var elmerAPIAccessTokenAccessor: ElmerAPIAccessTokenAccessor {
+        authenticationStateDataSource
+    }
+    
     public init(
         userDefaults: UserDefaults,
-        urlSession: URLSession
+        elmerAPIClient: ElmerAPIClientProtocol
     ) {
         self.userDefaults = userDefaults
-        self.urlSession = urlSession
+        self.elmerAPIClient = elmerAPIClient
     }
     
     public func makeGetAuthenticationStateUseCase(

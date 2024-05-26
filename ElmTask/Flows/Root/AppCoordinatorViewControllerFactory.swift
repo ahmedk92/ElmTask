@@ -1,16 +1,20 @@
 import UIKit
 import Authentication
+import Incidents
 
 @MainActor
 final class AppCoordinatorViewControllerFactory {
     private let authenticationDIContainer: AuthenticationDIContainer
+    private let incidentsDIContainer: IncidentsDIContainer
     private let executeAsync: (@escaping () async throws -> Void) -> Void
     
     init(
         authenticationDIContainer: AuthenticationDIContainer,
+        incidentsDIContainer: IncidentsDIContainer,
         executeAsync: @escaping (@escaping () async throws -> Void) -> Void
     ) {
         self.authenticationDIContainer = authenticationDIContainer
+        self.incidentsDIContainer = incidentsDIContainer
         self.executeAsync = executeAsync
     }
     
@@ -49,6 +53,14 @@ final class AppCoordinatorViewControllerFactory {
                 executeAsync: executeAsync
             ),
             onVerificationSuccess: onVerificationSuccess
+        )
+    }
+    
+    func makeIncidentsViewController() -> IncidentsViewController {
+        .init(
+            viewModel: .init(
+                getIncidentsUseCase: incidentsDIContainer.makeGetIncidentsUseCase()
+            )
         )
     }
 }
